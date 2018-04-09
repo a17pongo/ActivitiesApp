@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static android.R.id.message;
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 public class MainActivity extends AppCompatActivity {
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
     private String[] mountainLocations = {"Alps","Alps","Alaska"};
@@ -32,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                String toast = "Name: " + mountainNames[position] + '\n' + "Location: " + mountainLocations[position] + '\n' + "Height: " + mountainHeights[position];
-                Toast.makeText(MainActivity.this,toast, Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(getApplicationContext(), MountainDetailsActivity.class);
+
+                String message = mountainLocations.toString();
+
+                intent.putExtra(EXTRA_MESSAGE, message);
                 startActivity(intent);
             }
         });
