@@ -1,5 +1,6 @@
 package com.example.brom.activitiesapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), MountainDetailsActivity.class);
+                startActivity(intent);
                 String toast = "Name: " + mountainNames[position] + '\n' + "Location: " + mountainLocations[position] + '\n' + "Height: " + mountainHeights[position];
                 Toast.makeText(MainActivity.this,toast, Toast.LENGTH_SHORT).show();
             }
