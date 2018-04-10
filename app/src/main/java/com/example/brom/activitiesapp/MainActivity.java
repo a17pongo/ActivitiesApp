@@ -36,10 +36,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), MountainDetailsActivity.class);
+                int height = mountainHeights[position];
+                String location = mountainLocations[position];
 
-                String message = mountainLocations.toString();
+                String mountHeight = Integer.toString(height);
 
-                intent.putExtra(EXTRA_MESSAGE, message);
+                intent.putExtra("LOCATION", location);
+                intent.putExtra("HEIGHT",mountHeight);
                 startActivity(intent);
             }
         });

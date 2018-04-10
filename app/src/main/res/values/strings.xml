@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">a17pongo - assignment3</string>
     <string name="title_activity_mountain_details">a17pongo-assignment3</string>
+    <string name="mountInfoTitel">Information about Selected mountain</string>
 </resources>
